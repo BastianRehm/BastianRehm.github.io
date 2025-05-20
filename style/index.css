@@ -3,13 +3,22 @@
 body,
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-section {
+  flex: 1 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 0;
 }
 
 .login-container {
@@ -25,6 +34,13 @@ html {
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: var(--font-size-heading);
+  color: var(--text-color);
+}
+
+.login-container p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 12px;
   color: var(--text-color);
 }
 
@@ -64,4 +80,39 @@ html {
   text-align: center;
   margin-top: 1rem;
   font-size: 0.9rem;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem; /* Abstand zwischen den Links */
+  margin-bottom: 1rem;
+}
+
+nav a {
+  position: relative;
+  padding: 0 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.2em;
+  background: #bbb;
 }
